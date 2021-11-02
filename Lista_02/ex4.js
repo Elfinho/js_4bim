@@ -1,8 +1,5 @@
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split("\n");
-
-var X = parseInt(lines.shift());
-var Y = parseFloat(lines.shift());
+var input = require('fs').readFileSync('stdin', 'utf8');
+var [X, Y] = input.split('\n').map(item => parseFloat(item));
 
 var kml = X / Y 
 

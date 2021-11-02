@@ -1,10 +1,7 @@
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+var input = require('fs').readFileSync('stdin', 'utf8');
+var [A, B, C] = input.split(' ').map(item => parseInt(item));
 
-var A = parseInt (lines.shift());
-var B = parseInt (lines.shift());
-var C = parseInt (lines.shift());
-var mab = (A+B + Math.abs(A-B)) / 2
-var resultado = (mab + C + Math.abs(mab - C)) / 2
+const maiorAB = (A + B + Math.abs(A - B)) / 2;
+const maiorXC = (C + maiorAB + Math.abs(C - maiorAB)) / 2;
 
-console.log(resultado + " eh o maior");
+console.log(maiorXC+' eh o maior');

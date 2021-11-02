@@ -1,10 +1,16 @@
 var input = require('fs').readFileSync('stdin', 'utf8');
-var lines = input.split("\n");
+let qtd_dias = parseInt(input);
+let qtd_anos, qtd_meses;
 
-var N = parseInt(lines);
-var x = parseInt(lines.shift());
-var dia = (x % 365) % 30
-var mes = (x % 365) / 30
-var ano = x / 365
+qtd_anos = parseInt(qtd_dias / 365);
+qtd_dias = qtd_dias % 365;
 
-console.log(ano.toFixed(0) + " ano(s)" + "\n" +mes.toFixed(0)+" mes(es)"+ "\n" + dia.toFixed(0)+" dia(s)");
+qtd_meses = parseInt(qtd_dias / 30);
+qtd_dias = qtd_dias % 30;
+
+let resultado =
+`${qtd_anos} ano(s)
+${qtd_meses} mes(es)
+${qtd_dias} dia(s)`
+
+console.log(resultado)
